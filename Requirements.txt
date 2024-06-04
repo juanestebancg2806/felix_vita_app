@@ -1,0 +1,6 @@
+Functional requirements:
+    -Allow recommending Felix Vita to a doctor's patients
+    -View the list of users associated with the doctor
+    -Allow the doctor to see the statistics of his patients
+    -Allow messages to patients
+    -Allow you to see the progress of a patient (in graphs, tables)
