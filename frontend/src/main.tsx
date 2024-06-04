@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import DashboardLayout from "./components/features/DashboardLayout.tsx";
+import DashboardLayout from "./features/DashboardLayout.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
