@@ -7,7 +7,6 @@ export const StyledPatients = styled.div`
   margin-right: auto;
 `;
 
-
 export const StyledTable = styled.table`
   border: 2px solid forestgreen;
   border-spacing: 50px 0;
@@ -15,4 +14,8 @@ export const StyledTable = styled.table`
 
 export const StyledTableHeader = styled.th`
   border-bottom: 1px solid black;
+`;
+
+export const StyledTableData = styled.td`
+  text-align: center;
 `;

@@ -24,7 +24,8 @@ const selectClassNameText = {
   span: `font-size: 0.875rem;
          line-height: 1.25rem; `,
   p: `font-size: 1rem;
-      line-height: 1.25rem; `,
+      line-height: 1.25rem; 
+      margin: 0.25rem 0`,
   label: `margin-bottom: 0.25rem; 
           font-size: 1rem;
           line-height: 1.5rem; 

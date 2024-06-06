@@ -13,13 +13,19 @@ import Home from "./pages/Home/Home.tsx";
 import Recommend from "./pages/Recommend/Recommend.tsx";
 import { ToastContainer } from "react-toastify";
 import Patients from "./pages/Patients/Patients.tsx";
+import Progress from "./pages/Progress/Progress.tsx";
+import Messages from "./pages/Messages/Messages.tsx";
+import Login from "./pages/Login/Login.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<DashboardLayout />}>
-      <Route path="" element={<Home />} />
+      <Route path="" element={<Login />} />
+      <Route path="home" element={<Home />} />
+      <Route path="messages" element={<Messages />} />
       <Route path="recommend" element={<Recommend />} />
       <Route path="patients" element={<Patients />} />
+      <Route path="progress" element={<Progress />} />
       <Route path="*" element={<p>Page not found</p>} />
     </Route>,
   ])

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { PatientData } from "../../services/patientsService/patientsServiceUtils";
 
-interface UseRecommendUtilsReturn {
+interface UsePatientsUtilsReturn {
   patients: PatientData[];
 }
 
-const useRecommendUtils = (): UseRecommendUtilsReturn => {
+const usePatientsUtils = (): UsePatientsUtilsReturn => {
   const [patients, setPatients] = useState<PatientData[]>([]);
 
   useEffect(() => {
@@ -32,4 +32,4 @@ const useRecommendUtils = (): UseRecommendUtilsReturn => {
   return { patients };
 };
 
-export default useRecommendUtils;
+export default usePatientsUtils;

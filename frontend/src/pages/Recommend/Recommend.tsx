@@ -27,13 +27,7 @@ const Recommend: React.FC = () => {
                 <td>
                   <Typography text={`${patient.email}`} />
                 </td>
-                <StyledTableData
-                  style={{
-                    alignContent: "center",
-                    display: "flex",
-                    gap: "4px",
-                  }}
-                >
+                <StyledTableData>
                   <Button
                     text="Send an email"
                     onClick={() => console.log("clicked email")}

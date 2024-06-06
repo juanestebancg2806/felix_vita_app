@@ -1,21 +1,18 @@
 import {
-  StyledHeader,
+  StyledBottomNagivation,
   StyledLogo,
   StyledNavLink,
   StyledOption,
-} from "./Header.styles";
-import { CgProfile } from "react-icons/cg";
-import { MdOutlineRecommend } from "react-icons/md";
+} from "./BottomNavigation.styles";
+import logo from "../../assets/logo.png";
+import { MdOutlineMessage, MdOutlineRecommend } from "react-icons/md";
+import Typography from "../Typography/Typography";
 import { PiUserListBold } from "react-icons/pi";
 import { RiProgress5Line } from "react-icons/ri";
-import { MdOutlineMessage } from "react-icons/md";
 
-import logo from "../../assets/logo.png";
-import Typography from "../Typography/Typography";
-
-const Header: React.FC = () => {
+const BottomNavigation: React.FC = () => {
   return (
-    <StyledHeader>
+    <StyledBottomNagivation>
       <StyledNavLink to="/home">
         <StyledLogo src={logo} />
       </StyledNavLink>
@@ -43,14 +40,8 @@ const Header: React.FC = () => {
           <Typography variant="p" text="Messages" />
         </StyledOption>
       </StyledNavLink>
-      {/*<StyledNavLink to="/profile">
-        <StyledOption>
-          <CgProfile size={30} />
-          <Typography variant="p" text="Profile" />
-        </StyledOption>
-      </StyledNavLink>*/}
-    </StyledHeader>
+    </StyledBottomNagivation>
   );
 };
 
-export default Header;
+export default BottomNavigation;

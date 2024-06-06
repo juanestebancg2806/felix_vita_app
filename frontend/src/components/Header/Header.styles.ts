@@ -3,15 +3,18 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
     display: flex;
-    //justify-content: space-between;
     gap: 3rem;
     align-items: center;
     padding: 1rem 2rem;
     background-color: white;
     color: black;
-    border-bottom-color: rgb(207 212 217 / 1);
+    border-bottom-color: rgb(207, 212, 217);
     border-radius: 25px;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 export const StyledLogo = styled.img`
