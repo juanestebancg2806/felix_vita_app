@@ -10,33 +10,36 @@ import { PiUserListBold } from "react-icons/pi";
 import { RiProgress5Line } from "react-icons/ri";
 
 import logo from "../../assets/logo.png";
+import Typography from "../Typography/Typography";
 
 const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <StyledLogo src={logo} />
+      <StyledNavLink to="/">
+        <StyledLogo src={logo} />
+      </StyledNavLink>
       <StyledNavLink to="/recommend">
         <StyledOption>
           <MdOutlineRecommend size={30} />
-          <p>Recommend</p>
+          <Typography variant="p" text="Recommend" />
         </StyledOption>
       </StyledNavLink>
       <StyledNavLink to="/patients">
         <StyledOption>
           <PiUserListBold size={30} />
-          <p>Patients</p>
+          <Typography variant="p" text="Patients" />
         </StyledOption>
       </StyledNavLink>
       <StyledNavLink to="/progress">
         <StyledOption>
           <RiProgress5Line size={30} />
-          <p>Progress</p>
+          <Typography variant="p" text="Progress" />
         </StyledOption>
       </StyledNavLink>
       <StyledNavLink to="/profile">
         <StyledOption>
           <CgProfile size={30} />
-          <p>Profile</p>
+          <Typography variant="p" text="Profile" />
         </StyledOption>
       </StyledNavLink>
     </StyledHeader>

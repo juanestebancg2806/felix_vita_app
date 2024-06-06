@@ -22,10 +22,8 @@ export const StyledLogo = styled.img`
 export const StyledOption = styled.div`
     display: flex;
     flex-direction: column;
-    font-size: 14x;
     align-items: center;
     justify-content: center;
-    line-height: 0.2;
     cursor: pointer;
 `;
 
@@ -33,6 +31,5 @@ export const StyledNavLink = styled(NavLink)`
     fill: #6e757c;
     color: rgb(20 21 23 / 1);
     text-decoration: none;
-
 `;
 

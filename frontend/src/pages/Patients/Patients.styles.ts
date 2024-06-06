@@ -1,0 +1,18 @@
+import styled from "styled-components";
+
+export const StyledPatients = styled.div`
+  margin-top: 1.25rem;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+
+export const StyledTable = styled.table`
+  border: 2px solid forestgreen;
+  border-spacing: 50px 0;
+`;
+
+export const StyledTableHeader = styled.th`
+  border-bottom: 1px solid black;
+`;
