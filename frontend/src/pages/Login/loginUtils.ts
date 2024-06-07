@@ -1,13 +1,16 @@
 import { FieldValues, UseFormReturn, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useAuth } from "../../services/authService/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormInputs extends FieldValues {
-  email: string;
+  username: string;
   password: string;
 }
 interface UseLoginUtilsReturn {
   loginForm: UseFormReturn<LoginFormInputs>;
+  onSubmit: (data: LoginFormInputs) => Promise<void>;
 }
 
 const MESSAGE_REQUIRED_FIELD = "Required field";
@@ -15,21 +18,36 @@ const MESSAGE_REQUIRED_FIELD = "Required field";
 // Define validation schema using yup
 const formSchema = yup
   .object({
-    email: yup
-      .string()
-      .email("Email must be a valid email")
-      .required(MESSAGE_REQUIRED_FIELD),
+    username: yup.string().required(MESSAGE_REQUIRED_FIELD),
     password: yup.string().required(MESSAGE_REQUIRED_FIELD),
   })
   .required(); // Ensure the entire schema is required
 
 const useLoginUtils = (): UseLoginUtilsReturn => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const loginForm = useForm<LoginFormInputs>({
     resolver: yupResolver(formSchema),
   });
 
+  const onSubmit = async (data: LoginFormInputs) => {
+    try {
+      const loginSuccess: boolean | undefined = await login(
+        data.username,
+        data.password
+      );
+      if(loginSuccess) {
+        navigate("/home");
+      }
+    } catch (error) {
+      console.error("Login failed", error);
+    }
+  };
+
   return {
     loginForm,
+    onSubmit,
   };
 };
 

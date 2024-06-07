@@ -14,13 +14,13 @@ import Button from "../../components/Button/Button";
 import logo from "../../assets/logo.png";
 
 const Login: React.FC = () => {
-  const { loginForm } = useLoginUtils();
+  const { loginForm, onSubmit } = useLoginUtils();
   const {
     handleSubmit,
     formState: { errors },
     register,
   } = loginForm;
-  const { email, password } = errors;
+  const { username, password } = errors;
 
   return (
     <StyledLogin>
@@ -28,10 +28,10 @@ const Login: React.FC = () => {
         <StyledForm onSubmit={(e) => e.preventDefault()}>
           <StyledLogo src={logo} />
           <StyledInputContainer>
-            <Typography variant="label" text="Email" />
-            <input {...register("email")} type="email" />
-            {email?.message && (
-              <StyledErrorLabel>{email.message}</StyledErrorLabel>
+            <Typography variant="label" text="Username" />
+            <input {...register("username")} />
+            {username?.message && (
+              <StyledErrorLabel>{username.message}</StyledErrorLabel>
             )}
           </StyledInputContainer>
           <StyledInputContainer>
@@ -43,10 +43,7 @@ const Login: React.FC = () => {
             )}
           </StyledInputContainer>
           <StyledLoginButtonWrapper>
-            <Button
-              text="Login"
-              onClick={handleSubmit((data) => console.log(data))}
-            />
+            <Button text="Login" onClick={handleSubmit(onSubmit)} />
           </StyledLoginButtonWrapper>
         </StyledForm>
       </Card>

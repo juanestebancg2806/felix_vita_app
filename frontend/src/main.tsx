@@ -16,16 +16,53 @@ import Patients from "./pages/Patients/Patients.tsx";
 import Progress from "./pages/Progress/Progress.tsx";
 import Messages from "./pages/Messages/Messages.tsx";
 import Login from "./pages/Login/Login.tsx";
+import { AuthProvider } from "./services/authService/AuthContext.tsx";
+import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<DashboardLayout />}>
       <Route path="" element={<Login />} />
-      <Route path="home" element={<Home />} />
-      <Route path="messages" element={<Messages />} />
-      <Route path="recommend" element={<Recommend />} />
-      <Route path="patients" element={<Patients />} />
-      <Route path="progress" element={<Progress />} />
+      <Route
+        path="home"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="messages"
+        element={
+          <ProtectedRoute>
+            <Messages />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="recommend"
+        element={
+          <ProtectedRoute>
+            <Recommend />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="patients"
+        element={
+          <ProtectedRoute>
+            <Patients />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="progress"
+        element={
+          <ProtectedRoute>
+            <Progress />{" "}
+          </ProtectedRoute>
+        }
+      />
       <Route path="*" element={<p>Page not found</p>} />
     </Route>,
   ])
@@ -33,7 +70,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer /> {/*To show toast anywhere*/}
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <ToastContainer /> {/*To show toast anywhere*/}
+    </AuthProvider>
   </React.StrictMode>
 );
