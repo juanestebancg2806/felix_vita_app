@@ -2,6 +2,11 @@ import Card from "../../components/Card/Card";
 import Typography from "../../components/Typography/Typography";
 import { StyledHome } from "./Home.styles";
 
+/**
+ * Renders the Home page component.
+ *
+ * @returns The rendered Home page component.
+ */
 const Home: React.FC = () => {
   return (
     <StyledHome>

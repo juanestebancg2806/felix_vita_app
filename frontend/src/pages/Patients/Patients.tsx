@@ -8,6 +8,9 @@ import {
 } from "./Patients.styles";
 import usePatientsUtils from "./patientsUtils";
 
+/**
+ * Renders a list of patients with their information.
+ */
 const Patients: React.FC = () => {
   const { patients } = usePatientsUtils();
   return (

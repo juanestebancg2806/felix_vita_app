@@ -11,10 +11,20 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/**
+ * Provides authentication functionality to the application.
+ * @param children - The child components to be wrapped by the AuthProvider.
+ */
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState<string | null>(null);
 
+  /**
+   * Logs in the user with the provided username and password.
+   * @param username - The username of the user.
+   * @param password - The password of the user.
+   * @returns A promise that resolves to a boolean indicating whether the login was successful.
+   */
   const login = async (
     username: string,
     password: string
@@ -44,6 +54,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  /**
+   * Logs out the user.
+   */
   const logout = () => {
     setIsAuthenticated(false);
     delete axiosInstance.defaults.auth; // Remove default auth

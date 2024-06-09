@@ -5,6 +5,10 @@ interface UseRecommendUtilsReturn {
   patients: PatientData[];
 }
 
+/**
+ * Custom hook that provides utility functions for recommending patients.
+ * @returns An object containing the list of patients.
+ */
 const useRecommendUtils = (): UseRecommendUtilsReturn => {
   const [patients, setPatients] = useState<PatientData[]>([]);
 

@@ -19,6 +19,11 @@ import Login from "./pages/Login/Login.tsx";
 import { AuthProvider } from "./services/authService/AuthContext.tsx";
 import ProtectedRoute from "./features/ProtectedRoute/ProtectedRoute.tsx";
 
+/**
+ * Creates the router for the application and defines the routes.
+ *
+ * @returns The created router.
+ */
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<DashboardLayout />}>

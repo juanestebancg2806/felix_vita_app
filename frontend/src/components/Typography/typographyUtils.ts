@@ -10,15 +10,23 @@ export type VariantTypography =
   | "span"
   | "p"
   | "label";
-  
+
+/**
+ * Represents the props for the Typography component.
+ */
 export interface TypographyProps {
+  /**
+   * The variant of the typography.
+   */
   variant?: VariantTypography;
+
+  /**
+   * The text content of the typography.
+   */
   text?: ReactNode;
+
+  /**
+   * The child elements of the typography.
+   */
   children?: ReactNode;
-  className?: string;
-  required?: boolean;
-  $textTooltip?: string;
-  htmlFor?: string;
-  disabled?: boolean;
-  onClickInfoIcon?: () => void;
 }

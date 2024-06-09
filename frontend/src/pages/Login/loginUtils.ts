@@ -23,6 +23,11 @@ const formSchema = yup
   })
   .required(); // Ensure the entire schema is required
 
+/**
+ * Custom hook that provides login utility functions and form validation for the login page.
+ *
+ * @returns An object containing the login form and the onSubmit function.
+ */
 const useLoginUtils = (): UseLoginUtilsReturn => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -37,7 +42,7 @@ const useLoginUtils = (): UseLoginUtilsReturn => {
         data.username,
         data.password
       );
-      if(loginSuccess) {
+      if (loginSuccess) {
         navigate("/home");
       }
     } catch (error) {

@@ -13,6 +13,10 @@ import {
 } from "./Messages.styles";
 import useMessagesUtils from "./messagesUtils";
 
+/**
+ * Represents the Messages component.
+ * This component displays a list of messages for each patient.
+ */
 const Messages: React.FC = () => {
   const { patients } = useMessagesUtils();
   return (

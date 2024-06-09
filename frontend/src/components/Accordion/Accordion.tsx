@@ -1,3 +1,12 @@
+/**
+ * Accordion component that displays a collapsible content section with a title.
+ *
+ * @component
+ * @param {AccordionProps} props - The props for the Accordion component.
+ * @param {string} props.title - The title of the accordion.
+ * @param {ReactNode} props.children - The content to be displayed when the accordion is open.
+ * @returns {JSX.Element} The rendered Accordion component.
+ */
 import Typography from "../Typography/Typography";
 import {
   StyledAccordion,

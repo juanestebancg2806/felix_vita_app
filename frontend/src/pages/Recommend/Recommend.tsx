@@ -9,6 +9,10 @@ import {
 } from "./Recommend.styles";
 import useRecommendUtils from "./recommendUtils";
 
+/**
+ * Renders the Recommend page component.
+ * This component displays a table of patients and allows the user to send emails or generate links for each patient.
+ */
 const Recommend: React.FC = () => {
   const { patients } = useRecommendUtils();
   return (

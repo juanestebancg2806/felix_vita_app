@@ -1,4 +1,3 @@
-import { Controller } from "react-hook-form";
 import Card from "../../components/Card/Card";
 import Typography from "../../components/Typography/Typography";
 import {
@@ -13,6 +12,10 @@ import useLoginUtils from "./loginUtils";
 import Button from "../../components/Button/Button";
 import logo from "../../assets/logo.png";
 
+/**
+ * Represents the Login component.
+ * This component is responsible for rendering the login form.
+ */
 const Login: React.FC = () => {
   const { loginForm, onSubmit } = useLoginUtils();
   const {

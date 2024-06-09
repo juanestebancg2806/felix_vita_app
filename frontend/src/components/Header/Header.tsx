@@ -4,7 +4,6 @@ import {
   StyledNavLink,
   StyledOption,
 } from "./Header.styles";
-import { CgProfile } from "react-icons/cg";
 import { MdOutlineRecommend } from "react-icons/md";
 import { PiUserListBold } from "react-icons/pi";
 import { RiProgress5Line } from "react-icons/ri";
@@ -14,6 +13,10 @@ import logo from "../../assets/logo.png";
 import Typography from "../Typography/Typography";
 import { useAuth } from "../../services/authService/AuthContext";
 
+/**
+ * Represents the header component of the application.
+ * This component displays the logo and navigation options based on the user's authentication status.
+ */
 const Header: React.FC = () => {
   const { isAuthenticated } = useAuth();
   return (

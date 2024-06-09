@@ -5,6 +5,10 @@ interface UsePatientsUtilsReturn {
   patients: PatientData[];
 }
 
+/**
+ * Custom hook that provides utility functions for managing patients.
+ * @returns An object containing the patients array.
+ */
 const usePatientsUtils = (): UsePatientsUtilsReturn => {
   const [patients, setPatients] = useState<PatientData[]>([]);
 

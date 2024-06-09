@@ -1,3 +1,7 @@
+/**
+ * Renders the bottom navigation component.
+ * @returns The JSX element representing the bottom navigation.
+ */
 import {
   StyledBottomNagivation,
   StyledLogo,
