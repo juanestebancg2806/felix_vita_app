@@ -29,7 +29,7 @@ const Recommend: React.FC = () => {
                 </td>
                 <StyledTableData>
                   <Button
-                    text="Send an email"
+                    text="Send email"
                     onClick={() => console.log("clicked email")}
                   />
                   <Button

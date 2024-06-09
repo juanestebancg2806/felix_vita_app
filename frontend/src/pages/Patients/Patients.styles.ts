@@ -10,6 +10,8 @@ export const StyledPatients = styled.div`
 export const StyledTable = styled.table`
   border: 2px solid forestgreen;
   border-spacing: 50px 0;
+  margin: 0 auto;
+  padding: 10px;
 `;
 
 export const StyledTableHeader = styled.th`
